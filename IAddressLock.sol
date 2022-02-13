@@ -3,7 +3,7 @@
 pragma solidity >=0.8.0;
 
 import "./IRegistryProvider.sol";
-import '@openzeppelin/contracts/utils/introspection/IERC165.sol';
+import './IERC165.sol';
 
 /**
  * @title Provider interface for Revest FNFTs
