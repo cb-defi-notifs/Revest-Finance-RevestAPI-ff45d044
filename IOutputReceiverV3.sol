@@ -10,6 +10,19 @@ import "./IOutputReceiverV2.sol";
  */
 interface IOutputReceiverV3 is IOutputReceiverV2 {
 
+    event DepositERC20OutputReceiver(address indexed mintTo, address indexed token, uint amountTokens, uint indexed fnftId, bytes extraData);
+
+    event DepositERC721OutputReceiver(address indexed mintTo, address indexed token, uint[] tokenIds, uint indexed fnftId, bytes extraData);
+
+    event DepositERC1155OutputReceiver(address indexed mintTo, address indexed token, uint tokenId, uint amountTokens, uint indexed fnftId, bytes extraData);
+
+    event WithdrawERC20OutputReceiver(address indexed caller, address indexed token, uint amountTokens, uint indexed fnftId, bytes extraData);
+
+    event WithdrawERC721OutputReceiver(address indexed caller, address indexed token, uint[] tokenIds, uint indexed fnftId, bytes extraData);
+
+    event WithdrawERC1155OutputReceiver(address indexed caller, address indexed token, uint tokenId, uint amountTokens, uint indexed fnftId, bytes extraData);
+
+
     /// Specific call to allow the implementing contract to handle time-locked FNFTs having their maturity extended
     /// Particularly useful for contract where staking is the aim
     /// @param fnftId the id for the FNFT having its maturity extended
